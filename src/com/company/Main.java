@@ -7,7 +7,7 @@ public class Main {
         selectionSort(runnerArray);
         for (int i = 0; i < runnerArray.length; i++)
         {
-            System.out.print(runnerArray[i]);
+            System.out.print(runnerArray[i] + " ");
         }
     }
 
@@ -19,22 +19,23 @@ public class Main {
         arr[j] = temp;
     }
 
-    public static void selectionSort(int[] arr)
+   public static void selectionSort(int[] list1)
     {
         int pos = 0;
-        int currentMin = 0;
-        for (int i = 0; i < arr.length; i++)
+        int minIndex = 0;
+        for (int i = 0; i < list1.length; i++)
         {
             pos = i;
-            currentMin = arr[i];
-            for (int x = i+1; x < arr.length; x++)
+            int currentMin = list1[i];
+            for (int x = i+1; x < list1.length; x++)
             {
-                if (arr[x] < currentMin)
+                if (list1[x] < currentMin)
                 {
-                    currentMin = x;
+                    minIndex = x;
+                    swap(list1, minIndex, pos);
                 }
-                swap(arr, currentMin, pos);
+
             }
         }
-    }
+   }
 }
